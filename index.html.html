@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecionamento de Prova</title>
+    <script>
+        window.onload = function() {
+            const links = [
+                "https://forms.office.com/r/uXkjFGgBVa",  // ALPHA
+                "https://forms.office.com/r/qBfugtUZnv",  // BRAVO
+                "https://forms.office.com/r/JYxjjwKFf2",  // CHARLIE
+                "https://forms.office.com/r/MJdMVsjccg",  // DELTA
+                "https://forms.office.com/r/TxpYJ9jK7B"   // FOXTROT
+            ];
+            const randomIndex = Math.floor(Math.random() * links.length);
+            window.location.href = links[randomIndex];
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecionando para sua prova...</p>
+</body>
+</html>
