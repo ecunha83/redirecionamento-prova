@@ -4,15 +4,6 @@
     <meta charset="UTF-8">
     <title>Redirecionamento de Prova</title>
     <script>
-        // Função para embaralhar o array (algoritmo Fisher-Yates)
-        function shuffle(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
         window.onload = function() {
             const links = [
                 "https://forms.office.com/r/uXkjFGgBVa",  // ALPHA
@@ -21,23 +12,8 @@
                 "https://forms.office.com/r/MJdMVsjccg",  // DELTA
                 "https://forms.office.com/r/TxpYJ9jK7B"   // FOXTROT
             ];
-
-            // Verifica se já existe uma fila salva
-            let queue = JSON.parse(localStorage.getItem('queue'));
-
-            // Se não existir ou se estiver vazia, cria nova fila embaralhada
-            if (!queue || queue.length === 0) {
-                queue = shuffle([...links]);
-            }
-
-            // Pega o primeiro link da fila
-            const nextLink = queue.shift();
-
-            // Salva a fila atualizada
-            localStorage.setItem('queue', JSON.stringify(queue));
-
-            // Redireciona
-            window.location.href = nextLink;
+            const randomIndex = Math.floor(Math.random() * links.length);
+            window.location.href = links[randomIndex];
         };
     </script>
     <style>
